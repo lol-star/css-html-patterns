@@ -4,6 +4,18 @@
 	<head>
 		<title></title>
 		<style type="text/css">
+		.clearfix:after {
+			visibility: hidden;
+			display: block;
+			font-size: 0;
+			content: " ";
+			clear: both;
+			height: 0;
+		}
+		.clearfix { display: inline-block; }
+		* html .clearfix { height: 1%; }
+		.clearfix { display: block; }
+		
 		@media all and (orientation: portrait) {
 			@media screen and (min-height: 1440px) {
 				header {
@@ -27,18 +39,48 @@
 				}
 			}
 		}
+		@media all and (orientation: landscape){
+			header {
+				background: red;
+				height: 250px;
+				margin-bottom: 10px;
+			}
+			section {
+				background: green;
+				min-height: 600px;
+				width: 80%;
+				margin-bottom: 10px;
+				float: left;
+			}
+			footer {
+				background: gray;
+				height: 100px;
+			}
+			nav {
+				background: blue;
+				height: 600px;
+				margin-bottom: 10px;
+				margin-right: 10px;
+				width: 182px;
+				float: left;
+			}
+		}
 		</style>
 	</head>
 	<body>
 		<header>
 			Header
 		</header>
-		<nav>
-			nav
-		</nav>
-		<section>
-			Section
-		</section>
+		
+		<div class="clearfix">
+			<nav>
+				navbar
+			</nav>
+			<section>
+				Content
+			</section>
+		</div>
+		
 		<footer>
 			Footer
 		</footer>
